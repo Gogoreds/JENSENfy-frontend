@@ -1,13 +1,13 @@
 import React from 'react'
 import NavMenu from './navbars/NavMenu'
-function LoginPage() {
+
+function About() {
   return (
     <div>
       <NavMenu />
-      <h1>hellue</h1>
-      <h1>Log in page</h1>
+      <h2>About us</h2>
     </div>
   )
 }
 
-export default LoginPage
+export default About

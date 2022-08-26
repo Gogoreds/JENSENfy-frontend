@@ -6,6 +6,7 @@ const AUTH_URL =
 
 export default function SpotifyLogin() {
   return (
+
     <Container
       className="d-flex justify-content-center align-items-center"
       style={{ minHeight: "100vh" }}

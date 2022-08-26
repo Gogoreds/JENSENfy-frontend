@@ -1,8 +1,12 @@
 import React from 'react'
+import NavMenu from './navbars/NavMenu'
 
 function Startpage() {
   return (
-    <div>Startpage</div>
+    <div>
+      <NavMenu />
+      <h2>Startsidan</h2>
+    </div>
   )
 }
 
