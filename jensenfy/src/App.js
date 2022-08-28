@@ -14,8 +14,6 @@ import Register from './components/Register';
 import Loggedinprofile from './components/LoggedIn/Loggedinprofile';
 import Mypage from './components/LoggedIn/Mypage';
 
-
-
 function App() {
   return (
     <Router>
