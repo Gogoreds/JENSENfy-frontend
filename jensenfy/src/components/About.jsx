@@ -4,6 +4,7 @@ import sliderImage from "./sliderImage";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
 import Arrows from "./Arrows";
+import "./slider.css";
 
 
 const len = sliderImage.length - 1;
@@ -12,12 +13,21 @@ function About(props) {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(activeIndex === len ? 0 : activeIndex + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
+
   return (
     <>
     <div>
       <NavMenu />
       </div>
-      <h2>About us</h2>
+      <h1>About us</h1>
+      <h2>Everyday With Jensenfy Music !</h2>
       <div className="slider-container">
       <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
       <Arrows
@@ -28,7 +38,12 @@ function About(props) {
           setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
         }
       />
-    </div>
+    <Dots
+        activeIndex={activeIndex}
+        sliderImage={sliderImage}
+        onclick={(activeIndex) => setActiveIndex(activeIndex)}
+      />
+      </div>
     </>
   )
 }
