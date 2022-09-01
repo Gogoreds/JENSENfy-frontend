@@ -1,12 +1,18 @@
-
-import React, { useState } from "react"
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Loggedinprofile from "./LoggedIn/Loggedinprofile.jsx";
 
 export default function Login(props) {
-  let [authMode, setAuthMode] = useState("signin")
+  let [authMode, setAuthMode] = useState("signin");
 
   const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
-  }
+    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  };
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate("/UserLoggedIn");
+  };
 
   if (authMode === "signin") {
     return (
@@ -37,15 +43,18 @@ export default function Login(props) {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <button
+                onClick={navigateToLogin}
+                type="submit"
+                className="btn btn-primary"
+              >
                 Submit
               </button>
             </div>
-
           </div>
         </form>
       </div>
-    )
+    );
   }
 
   return (
@@ -94,5 +103,5 @@ export default function Login(props) {
         </div>
       </form>
     </div>
-  )
+  );
 }
