@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import Loggedinprofile from "./LoggedIn/Loggedinprofile.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
   let [authMode, setAuthMode] = useState("signin");
