@@ -15,7 +15,7 @@ You'll find all your grooviest fantasies here!
 <!-- PROJECT -->
 <br />
 <div align="center">
-  <a href="https://github.com/Gogoreds/JENSENfy-fronten"https://github.com/othneildrew/Best-README-Template"><strong">
+  <a href="https://github.com/Gogoreds/JENSENfy-frontend"><strong">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -24,7 +24,7 @@ You'll find all your grooviest fantasies here!
   <p align="center">
     An awesome README template to jumpstart your projects!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Components »</strong></a>
+    <a href="https://github.com/Gogoreds/JENSENfy-frontend/blob/main/README.md#readme-top"><strong>Components »</strong></a>
     <br />
     <br />
     ·  ·
@@ -36,21 +36,31 @@ You'll find all your grooviest fantasies here!
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://www.spotify.com](https://spotif
+1. Get a free API Key at [https://www.spotify.com](https://open.spotify.com/)
 
-y.com)
+
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Gogoreds/JENSENfy-frontend
    ```
-	3. Install NPM packages
+	3. Create a New React App for Frontend Dev
+	npx create-react-app JENSENfy-frontend
+
 	test   ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Enter your Login in LoginPage.jsx
    ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+   const API_KEY = 'ENTER YOUR API' for login;
+
+4. Enter your About in About in navbars. 
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+ <h2><JENSENfy - music app/h2>
+ Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS. 
 
