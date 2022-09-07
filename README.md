@@ -1,6 +1,8 @@
 
 # JENSENfy
- Simple music Web App :smile   :tada
+ <h2>Simple music Web App</h2> 
+ :smile   
+ :tada
 
   ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
 
@@ -49,6 +51,15 @@ _Below is an example of how you can instruct your audience on installing and set
   npx create-react-app JENSENfy-frontend
   ```
 
+   ```
+  npx init -y
+  ```
+
+  ```
+  npx install
+  ```
+
+
 1. Get a free API Key at [https://www.spotify.com](https://open.spotify.com/)
 
 
@@ -59,11 +70,11 @@ _Below is an example of how you can instruct your audience on installing and set
 	3. Create a New React App for Frontend Dev
 	npx create-react-app JENSENfy-frontend
 
-	test   ```sh
-   npm install
+	test   ```
+   npm start
    ```
 3. Enter your Login in LoginPage.jsx
-   ```js
+   ```jsx
    const API_KEY = 'ENTER YOUR API' for login;
 
 4. Enter your About in About in navbars. 
