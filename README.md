@@ -1,9 +1,19 @@
 
 # JENSENfy
-You'll find all your grooviest fantasies here!
+ Simple music Web App :smile   :tada
+
+  ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
+
+ 
+![Skärmbild (507)](https://user-images.githubusercontent.com/56717993/188828437-dc0a6d92-dcce-4602-9034-8d2b438fe1b6.png)
+
+
+
 
 <!-- Improved compatibility of back to top link: See: https://github.com/Gogoreds/JENSENfy-frontend -->
 <a name="readme-top"></a>
+<a name="Jensenfy"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -35,6 +45,9 @@ You'll find all your grooviest fantasies here!
  ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+```
+  npx create-react-app JENSENfy-frontend
+  ```
 
 1. Get a free API Key at [https://www.spotify.com](https://open.spotify.com/)
 
