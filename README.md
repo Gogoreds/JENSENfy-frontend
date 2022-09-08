@@ -1,11 +1,25 @@
 
 # JENSENfy
- <h2>Simple music Web App***Jensenfy***</h2> 
+ <h2>Simple music Web App</h2> 
+ + Index
+ - public
+ -src
+ -.gitignore
+ -README.md
+ -package-lock.json
+ -package.json
+ * assets
+ * components
+ + App.js
+ + index.js
+ + useAuth.js
+
     
  
 
-  ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
+  > ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
 
+---
  
 ![Skärmbild (507)](https://user-images.githubusercontent.com/56717993/188828437-dc0a6d92-dcce-4602-9034-8d2b438fe1b6.png)
 
@@ -24,7 +38,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<!-- PROJECT -->
+>> <!-- PROJECT -->
 <br />
 <div align="center">
   <a href="https://github.com/Gogoreds/JENSENfy-frontend"><strong">
@@ -84,8 +98,8 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
    npm start
    ```
-3. Enter your Login in LoginPage.jsx
-   ```jsx
+3. Enter your Spotify Log in SpotifyLogin.jsx
+   ```js
    const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=98d=....
    ENTER YOUR API' for login;
    ```
@@ -101,8 +115,10 @@ _Below is an example of how you can instruct your audience on installing and set
  <h2><JENSENfy - music app</h2>
  <h3>Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS.</h3>
 
-
-
+ |                  |         Jensenfy               | User comments              |  
+|:--- | ---: | :---: |  
+| Value             | *****      | Healing Time |  
+| Mission          | *****       | Promote social bonding|
 
 
 
