@@ -1,8 +1,8 @@
 
 # JENSENfy
  <h2>Simple music Web App</h2> 
- :smile   
- :tada
+    
+ 
 
   ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
 
@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Gogoreds/JENSENfy-frontend"><strong">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Jensenfy Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
@@ -56,9 +56,18 @@ _Below is an example of how you can instruct your audience on installing and set
   ```
 
   ```
-  npx install
+  npm install
+  ```
+   ```
+  npm install --save react-router-dom
+  ```
+    ```
+  npm install react-bootstrap bootstrap
   ```
 
+    ```
+  npm install react-slick --save
+    ```
 
 1. Get a free API Key at [https://www.spotify.com](https://open.spotify.com/)
 
@@ -75,9 +84,10 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Enter your Login in LoginPage.jsx
    ```jsx
-   const API_KEY = 'ENTER YOUR API' for login;
+   const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=98d=....
+   ENTER YOUR API' for login;
 
-4. Enter your About in About in navbars. 
+4. Enter to  About page in About in navbars. 
 
 
 
