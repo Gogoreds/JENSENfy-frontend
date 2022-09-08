@@ -1,20 +1,16 @@
 
 # JENSENfy
  <h2>Simple music Web App</h2> 
- + Index
- - public
- -src
- -.gitignore
- -README.md
- -package-lock.json
- -package.json
- * assets
- * components
- + App.js
- + index.js
- + useAuth.js
+ <h2><JENSENfy - music app</h2>
+ <h3>Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS.</h3>
 
-    
+---
+## Brand:
+ |                  |         Jensenfy               | User comments              |
+|:--- | ---: | :---: |
+| Value             | *****      | Healing Time |
+| Mission          | *****       | Promote social bonding|
+
  
 
   > ![Skärmbild (505)](https://user-images.githubusercontent.com/56717993/188828483-e7d178e9-1980-4393-960e-7ba58878c7ec.png)
@@ -99,9 +95,8 @@ _Below is an example of how you can instruct your audience on installing and set
    npm start
    ```
 3. Enter your Spotify Log in SpotifyLogin.jsx
-   ```js
+   ```javascript
    const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=98d=....
-   ENTER YOUR API' for login;
    ```
 
 4. Enter to  About page in About in navbars. 
@@ -112,13 +107,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 
- <h2><JENSENfy - music app</h2>
- <h3>Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS.</h3>
 
- |                  |         Jensenfy               | User comments              |  
-|:--- | ---: | :---: |  
-| Value             | *****      | Healing Time |  
-| Mission          | *****       | Promote social bonding|
 
 
 
