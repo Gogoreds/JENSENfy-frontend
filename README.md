@@ -1,6 +1,6 @@
 
 # JENSENfy
- <h2>Simple music Web App</h2> 
+ <h2>Simple music Web App***Jensenfy***</h2> 
     
  
 
@@ -34,7 +34,7 @@
   <h3 align="center">Best-README-Template</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome music web app to jumpstart your projects!
     <br />
     <a href="https://github.com/Gogoreds/JENSENfy-frontend/blob/main/README.md#readme-top"><strong>Components »</strong></a>
     <br />
@@ -60,12 +60,13 @@ _Below is an example of how you can instruct your audience on installing and set
   ```
    ```
   npm install --save react-router-dom
+  ```  
+
   ```
-    ```
   npm install react-bootstrap bootstrap
   ```
 
-    ```
+   ```
   npm install react-slick --save
     ```
 
@@ -73,19 +74,21 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 2. Clone the repo
-   ```sh
+   ```
    git clone https://github.com/Gogoreds/JENSENfy-frontend
    ```
 	3. Create a New React App for Frontend Dev
 	npx create-react-app JENSENfy-frontend
 
-	test   ```
+	test   
+   ```
    npm start
    ```
 3. Enter your Login in LoginPage.jsx
    ```jsx
    const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=98d=....
    ENTER YOUR API' for login;
+   ```
 
 4. Enter to  About page in About in navbars. 
 
@@ -95,8 +98,8 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 
- <h2><JENSENfy - music app/h2>
- Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS. 
+ <h2><JENSENfy - music app</h2>
+ <h3>Simple music app created with React.js, Express, Javascript, Markdown/Markup, Firebase, SQL lite and Bootstrp CSS.</h3>
 
 
 
