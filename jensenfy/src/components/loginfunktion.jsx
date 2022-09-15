@@ -66,6 +66,7 @@ export default function Login(props) {
             <div className="form-group mt-3">
               <label>Användarnamn </label>
               <input
+                onChange={(event) => setUserName(event.target.value)}
                 value={user}
                 type="userName"
                 className="form-control mt-1"
@@ -75,6 +76,7 @@ export default function Login(props) {
             <div className="form-group mt-3">
               <label>Password</label>
               <input
+                onChange={(event) => setPassword(event.target.value)}
                 value={password}
                 type="password"
                 className="form-control mt-1"
@@ -126,7 +128,14 @@ export default function Login(props) {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary"
+              onClick={() => {
+                post("/Courses", {
+                  userName: userName,
+                  password: password,
+                });
+                get("api/users").then((response) => setCourse(response.data));
+              }}>
               Submit
             </button>
           </div>
