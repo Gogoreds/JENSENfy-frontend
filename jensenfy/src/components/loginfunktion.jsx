@@ -1,5 +1,7 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react'
+
+
 
 export default function Login(props) {
   let [authMode, setAuthMode] = useState("signin");
@@ -13,6 +15,42 @@ export default function Login(props) {
     navigate("/UserLoggedIn");
   };
 
+
+  const [user, setUser] = useState([]);
+  const [newUser, setNewUser] = useState([]);
+
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const [post, getPost] = useState([])
+
+
+  const API = 'http://localhost:8080/';
+  const fetchPost = () => {
+    fetch(API)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+        getPost(res)
+      })
+  }
+
+
+  useEffect(() => {
+
+    fetchPost("api/users").then((response) => setUser(response.data));
+    fetchPost("api/users/newUser").then((response) => setNewUser(response.data));
+
+
+
+  }, []);
+
+
+
+
+
+
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
@@ -21,21 +59,23 @@ export default function Login(props) {
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
               Not registered yet?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
+              <span className="link-primary" onClick={changeAuthMode} >
                 Sign Up
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
+              <label>Användarnamn </label>
               <input
-                type="email"
+                value={user}
+                type="userName"
                 className="form-control mt-1"
-                placeholder="Enter email"
+                placeholder="username"
               />
             </div>
             <div className="form-group mt-3">
               <label>Password</label>
               <input
+                value={password}
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
@@ -68,21 +108,15 @@ export default function Login(props) {
             </span>
           </div>
           <div className="form-group mt-3">
-            <label>Full Name</label>
+            <label>Registera Full Name</label>
             <input
-              type="email"
+              type="userName"
               className="form-control mt-1"
               placeholder="e.g Jane Doe"
+              value={newUser}
             />
           </div>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Email Address"
-            />
-          </div>
+
           <div className="form-group mt-3">
             <label>Password</label>
             <input
