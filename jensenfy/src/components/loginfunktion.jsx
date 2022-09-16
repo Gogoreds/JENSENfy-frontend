@@ -109,44 +109,36 @@ export default function Login(props) {
           <div className="text-center">
             Already registered?{" "}
             <span className="link-primary" onClick={changeAuthMode}>
-              Sign In
+              Go to Sign In
             </span>
           </div>
           <div className="form-group mt-3">
-            <label>Registera Full Name</label>
+            <label>Register Your Username here</label>
             <input
               className="form-control mt-1"
 
               name="userName"
               value={userName}
-              placeholder="userName"
+              placeholder="ure username here:"
               onChange={(event) => setUserName(event.target.value)}
 
             />
           </div>
 
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label>Register Youre password</label>
             <input
               className="form-control mt-1"
               type="password"
               name="password"
               value={password}
-              placeholder="password"
+              placeholder="ure password here"
               onChange={(event) => setPassword(event.target.value)}
 
             />
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary" onClick={postData}>
-              {/* onClick={() => {
-               post("/api/users/newUser", {
-                newUserName: newUserName,
-                newPassword: newPassword,
-                 });
-                fetchPost("api/users").then((response) => setNewUser(response.data));
-
-                 }}> */}
               Registera
             </button>
           </div>
