@@ -1,5 +1,6 @@
 //import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
+import axios from 'axios';
 
 
 
@@ -16,42 +17,26 @@ export default function Login(props) {
   // };
 
 
-  // const [user, setUser] = useState([]);
-  // const [newUser, setNewUser] = useState([]);
+  const [APIData, setAPIData] = useState([]);
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const [newUserName, setNewUserName] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-
-
-
-  // const [post, getPost] = useState([])
-
-
-  // const API = 'http://localhost:8080/';
-  // const fetchPost = () => {
-  //   fetch(API)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       console.log(res)
-  //       getPost(res)
-  //     })
-  // }
 
 
   const postData = () => {
-    console.log(userName);
-    console.log(password);
-    console.log(newUserName);
-    console.log(newPassword);
+    axios.post(`http://localhost:8080/api/users/newUser`, {
+      userName,
+      password
+    })
   }
 
   useEffect(() => {
 
-    //   // fetchPost("api/users").then((response) => setUser(response.data));
-    //   // fetchPost("api/users/newUser").then((response) => setNewUser(response.data));
+    axios.get(`http://localhost:8080/api/users`)
+      .then((response) => {
+        setAPIData(response.data);
+      })
 
 
 
@@ -92,6 +77,7 @@ export default function Login(props) {
                 className="form-control mt-1"
 
                 name="password"
+                type="password"
                 value={password}
                 placeholder="password"
                 onChange={(event) => setPassword(event.target.value)}
@@ -99,7 +85,7 @@ export default function Login(props) {
             </div>
             <div className="d-grid gap-2 mt-3">
               <button
-                onClick={postData}
+                onClick={APIData}
                 type="submit"
                 className="btn btn-primary"
               >
@@ -119,7 +105,7 @@ export default function Login(props) {
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center">
             Already registered?{" "}
-            <span className="link-primary">
+            <span className="link-primary" onClick={changeAuthMode}>
               Sign In
             </span>
           </div>
@@ -128,10 +114,10 @@ export default function Login(props) {
             <input
               className="form-control mt-1"
 
-              name="newUserName"
-              value={newUserName}
-              placeholder="newUserName"
-              onChange={(event) => setNewUserName(event.target.value)}
+              name="userName"
+              value={userName}
+              placeholder="userName"
+              onChange={(event) => setUserName(event.target.value)}
 
             />
           </div>
@@ -140,11 +126,11 @@ export default function Login(props) {
             <label>Password</label>
             <input
               className="form-control mt-1"
-
-              name="newPassword"
-              value={newPassword}
-              placeholder="newPassword"
-              onChange={(event) => setNewPassword(event.target.value)}
+              type="password"
+              name="password"
+              value={password}
+              placeholder="password"
+              onChange={(event) => setPassword(event.target.value)}
 
             />
           </div>
