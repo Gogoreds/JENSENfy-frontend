@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
 
 
@@ -9,38 +9,49 @@ export default function Login(props) {
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const navigateToLogin = () => {
-    navigate("/UserLoggedIn");
-  };
+  // const navigateToLogin = () => {
+  //   navigate("/UserLoggedIn");
+  // };
 
 
-  const [user, setUser] = useState([]);
-  const [newUser, setNewUser] = useState([]);
+  // const [user, setUser] = useState([]);
+  // const [newUser, setNewUser] = useState([]);
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  const [newUserName, setNewUserName] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
-  const [post, getPost] = useState([])
 
 
-  const API = 'http://localhost:8080/';
-  const fetchPost = () => {
-    fetch(API)
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res)
-        getPost(res)
-      })
+  // const [post, getPost] = useState([])
+
+
+  // const API = 'http://localhost:8080/';
+  // const fetchPost = () => {
+  //   fetch(API)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log(res)
+  //       getPost(res)
+  //     })
+  // }
+
+
+  const postData = () => {
+    console.log(userName);
+    console.log(password);
+    console.log(newUserName);
+    console.log(newPassword);
   }
-
 
   useEffect(() => {
 
-    fetchPost("api/users").then((response) => setUser(response.data));
-    fetchPost("api/users/newUser").then((response) => setNewUser(response.data));
+    //   // fetchPost("api/users").then((response) => setUser(response.data));
+    //   // fetchPost("api/users/newUser").then((response) => setNewUser(response.data));
 
 
 
@@ -64,32 +75,35 @@ export default function Login(props) {
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Användarnamn </label>
+              <label>Username </label>
               <input
-                onChange={(event) => setUserName(event.target.value)}
-                value={user}
-                type="userName"
                 className="form-control mt-1"
+
+                name="username"
+                value={userName}
                 placeholder="username"
+                onChange={(event) => setUserName(event.target.value)}
               />
             </div>
+
             <div className="form-group mt-3">
               <label>Password</label>
               <input
-                onChange={(event) => setPassword(event.target.value)}
-                value={password}
-                type="password"
                 className="form-control mt-1"
-                placeholder="Enter password"
+
+                name="password"
+                value={password}
+                placeholder="password"
+                onChange={(event) => setPassword(event.target.value)}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
               <button
-                onClick={navigateToLogin}
+                onClick={postData}
                 type="submit"
                 className="btn btn-primary"
               >
-                Submit
+                Logga in
               </button>
             </div>
           </div>
@@ -97,7 +111,7 @@ export default function Login(props) {
       </div>
     );
   }
-
+  // "Register page"
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">
@@ -105,38 +119,46 @@ export default function Login(props) {
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center">
             Already registered?{" "}
-            <span className="link-primary" onClick={changeAuthMode}>
+            <span className="link-primary">
               Sign In
             </span>
           </div>
           <div className="form-group mt-3">
             <label>Registera Full Name</label>
             <input
-              type="userName"
               className="form-control mt-1"
-              placeholder="e.g Jane Doe"
-              value={newUser}
+
+              name="newUserName"
+              value={newUserName}
+              placeholder="newUserName"
+              onChange={(event) => setNewUserName(event.target.value)}
+
             />
           </div>
 
           <div className="form-group mt-3">
             <label>Password</label>
             <input
-              type="password"
               className="form-control mt-1"
-              placeholder="Password"
+
+              name="newPassword"
+              value={newPassword}
+              placeholder="newPassword"
+              onChange={(event) => setNewPassword(event.target.value)}
+
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary"
-              onClick={() => {
-                post("/Courses", {
-                  userName: userName,
-                  password: password,
-                });
-                get("api/users").then((response) => setCourse(response.data));
-              }}>
-              Submit
+            <button type="submit" className="btn btn-primary" onClick={postData}>
+              {/* onClick={() => {
+               post("/api/users/newUser", {
+                newUserName: newUserName,
+                newPassword: newPassword,
+                 });
+                fetchPost("api/users").then((response) => setNewUser(response.data));
+
+                 }}> */}
+              Registera
             </button>
           </div>
           <p className="text-center mt-2">
