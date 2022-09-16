@@ -33,10 +33,10 @@ export default function Login(props) {
 
   useEffect(() => {
 
-    axios.get(`http://localhost:8080/api/users`)
-      .then((response) => {
-        setAPIData(response.data);
-      })
+    // axios.get(`http://localhost:8080/api/users`)
+    //   .then((response) => {
+    //     setAPIData(response.data);
+    //   })
 
 
 
