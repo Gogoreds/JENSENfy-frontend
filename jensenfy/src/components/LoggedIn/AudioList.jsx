@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaHeadphones, FaRegClock, FaRegHeart, FaHeart } from "react-icons/fa";
-import MusicPlayer from "./MusicPlayer";
-import { Songs } from "./Songs";
+import MusicPlayer from "./Player";
+import { Songs } from "./Music";
 
 function AudioList() {
   const [songs, setSongs] = useState(Songs);
