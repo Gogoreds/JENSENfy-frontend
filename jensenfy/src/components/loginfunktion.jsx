@@ -21,15 +21,11 @@ export default function Login(props) {
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [register, setRegister] = useState(false);
+  const [login, setLogin] = useState(false);
 
 
 
-  const postData = () => {
-    axios.post(`http://localhost:8080/api/users/newUser`, {
-      userName,
-      password
-    })
-  }
 
   useEffect(() => {
 
@@ -43,17 +39,58 @@ export default function Login(props) {
   }, []);
 
 
-  const handleSubmit = async (e) => {
+  const handleLogin = (e) => {
+    // prevent the form from refreshing the whole page
     e.preventDefault();
+    // make a popup alert showing the "submitted" text
+    alert("Logged in");
   }
 
+  const configurations = {
+    method: "post",
+    url: 'http://localhost:8080/api/login',
+    data: {
+      userName,
+      password,
+    },
+  };
+
+  axios(configurations)
+    .then((result) => { console.log(result); })
+    .catch((error) => { console.log(error); })
+
+
+
+  const handleSubmit = (e) => {
+    // prevent the form from refreshing the whole page
+    e.preventDefault();
+
+    // set configurations
+    const configuration = {
+      method: "post",
+      url: 'http://localhost:8080/api/users/newUser',
+      data: {
+        userName,
+        password,
+      },
+    };
+
+    // make the API call
+    axios(configuration)
+      .then((result) => {
+        setRegister(true);
+      })
+      .catch((error) => {
+        error = new Error();
+      });
+  };
 
 
 
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={handleSubmit}>
+        <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -88,9 +125,9 @@ export default function Login(props) {
             </div>
             <div className="d-grid gap-2 mt-3">
               <button
-
                 type="submit"
                 className="btn btn-primary"
+                onClick={(e) => handleLogin(e)}
               >
                 Logga in
               </button>
@@ -103,7 +140,7 @@ export default function Login(props) {
   // "Register page"
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={(e) => handleSubmit(e)}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center">
@@ -138,9 +175,16 @@ export default function Login(props) {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary" onClick={postData}>
+            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
               Registera
             </button>
+
+            {/* display success message */}
+            {register ? (
+              <p className="text-success">You Are Now Registered Successfully</p>
+            ) : (
+              <p className="text-danger">Please register your account here</p>
+            )}
           </div>
           <p className="text-center mt-2">
             Forgot <a href="#">password?</a>
