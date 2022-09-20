@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import SpotifyLogin from '../SpotifyLogin';
+
 
 function NavLoggedIn() {
   return (

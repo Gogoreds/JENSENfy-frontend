@@ -8,7 +8,6 @@ const AUTH_URL =
 export default function SpotifyLogin() {
   return (
     <div>
-      <NavMenu />
       <Container
         className="d-flex justify-content-center align-items-center"
         style={{ minHeight: "100vh" }}
