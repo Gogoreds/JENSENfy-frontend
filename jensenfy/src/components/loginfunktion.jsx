@@ -39,25 +39,6 @@ export default function Login(props) {
   }, []);
 
 
-  const handleLogin = (e) => {
-    // prevent the form from refreshing the whole page
-    e.preventDefault();
-    // make a popup alert showing the "submitted" text
-    alert("Logged in");
-  }
-
-  const configurations = {
-    method: "post",
-    url: 'http://localhost:8080/api/login',
-    data: {
-      userName,
-      password,
-    },
-  };
-
-  axios(configurations)
-    .then((result) => { console.log(result); })
-    .catch((error) => { console.log(error); })
 
 
 
@@ -84,6 +65,30 @@ export default function Login(props) {
         error = new Error();
       });
   };
+
+
+
+  ///test 
+
+  const handleLogin = (e) => {
+    // prevent the form from refreshing the whole page
+    e.preventDefault();
+    // make a popup alert showing the "submitted" text
+    alert("Logged in");
+  }
+
+  const configurations = {
+    method: "post",
+    url: 'http://localhost:8080/api/login',
+    data: {
+      userName,
+      password,
+    },
+  };
+
+  axios(configurations)
+    .then((result) => { console.log(result); })
+    .catch((error) => { console.log(error); })
 
 
 
