@@ -47,7 +47,7 @@ export default function Login(props) {
     e.preventDefault();
 
     // set configurations
-    const configuration = {
+    const RegConfiguration = {
       method: "post",
       url: 'http://localhost:8080/api/users/newUser',
       data: {
@@ -57,7 +57,7 @@ export default function Login(props) {
     };
 
     // make the API call
-    axios(configuration)
+    axios(RegConfiguration)
       .then((result) => {
         setRegister(true);
       })
@@ -68,27 +68,29 @@ export default function Login(props) {
 
 
 
-  ///test 
-
+  ///HANDLE Login part.
   const handleLogin = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // make a popup alert showing the "submitted" text
-    alert("Logged in");
-  }
+    alert("Loggin in");
+    const LoginConfigurations = {
+      method: "post",
+      url: 'http://localhost:8080/api/users/login',
+      data: {
+        userName,
+        password,
+      },
+    };
 
-  const configurations = {
-    method: "post",
-    url: 'http://localhost:8080/api/login',
-    data: {
-      userName,
-      password,
-    },
+    axios(LoginConfigurations)
+      .then((result) => {
+        setLogin(true);
+      })
+      .catch((error) => {
+        error = new Error();
+      });
   };
-
-  axios(configurations)
-    .then((result) => { console.log(result); })
-    .catch((error) => { console.log(error); })
 
 
 
@@ -112,7 +114,7 @@ export default function Login(props) {
                 name="username"
                 value={userName}
                 placeholder="username"
-                onChange={(event) => setUserName(event.target.value)}
+                onChange={(e) => setUserName(e.target.value)}
               />
             </div>
 
@@ -125,7 +127,7 @@ export default function Login(props) {
                 type="password"
                 value={password}
                 placeholder="password"
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
@@ -136,6 +138,12 @@ export default function Login(props) {
               >
                 Logga in
               </button>
+              {login ? (
+                <p className="text-success">You Are Logged in Successfully</p>
+              ) : (
+                <p className="text-danger">You Are Not Logged in</p>
+              )}
+
             </div>
           </div>
         </form>
