@@ -5,9 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import SpotifyLogin from './components/SpotifyLogin';
-import LoginPage from './components/LoginPage';
+import LoginPage from './components/Login/LoginPage';
 import Startpage from './components/Startpage';
-import Errorpage from './components/Errorpage'
+import Errorpage from './components/Login/Errorpage'
 import About from './components/About';
 import Loggedinprofile from './components/LoggedIn/Loggedinprofile';
 

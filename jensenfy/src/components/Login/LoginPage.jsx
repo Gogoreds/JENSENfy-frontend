@@ -1,5 +1,5 @@
 import React from 'react'
-import NavMenu from './navbars/NavMenu'
+import NavMenu from '../navbars/NavMenu'
 import Login from './loginfunktion'
 
 
