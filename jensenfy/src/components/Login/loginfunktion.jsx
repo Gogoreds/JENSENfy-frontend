@@ -17,7 +17,7 @@ export default function Login(props) {
   // };
 
 
-  const [APIData, setAPIData] = useState([]);
+  // const [APIData, setAPIData] = useState([]);
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -199,9 +199,7 @@ export default function Login(props) {
               <p className="text-danger">Please register your account here</p>
             )}
           </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
+
         </div>
       </form>
     </div>
