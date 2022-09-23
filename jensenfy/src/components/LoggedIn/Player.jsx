@@ -16,7 +16,7 @@ import { BsDownload } from "react-icons/bs";
 function Player({ song, imgSrc, auto }) {
   const [isLove, setLove] = useState(false);
   const [isPlaying, setPlay] = useState(false);
-  //   duration state
+
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrenttime] = useState(0);
 
