@@ -11,8 +11,6 @@ function Loggedinprofile() {
       <LeftSideBar />
       <Dashboard />
       <RightSideBar />
-      {/* <NavLoggedIn />
-      <SpotifyLogin /> */}
       Loggedinprofile
     </div>
   );
