@@ -1,4 +1,5 @@
 import React from "react";
+import "./LeftSideBarStyles.css";
 import { FaSpotify, FaEllipsisH } from "react-icons/fa";
 import { BiSearchAlt } from "react-icons/bi";
 import { Menu } from "./Menu";
@@ -38,4 +39,4 @@ function LeftSideBar() {
   );
 }
 
-export { LeftSideBar };
+export default { LeftSideBar };

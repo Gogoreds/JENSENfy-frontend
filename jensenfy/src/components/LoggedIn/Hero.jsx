@@ -1,11 +1,11 @@
 import React from "react";
-import artist from "../img/artist.jpg";
+import banner from "../img/banner.png";
 import check from "../img/check.png";
 import { FaEllipsisH, FaHeadphones, FaCheck } from "react-icons/fa";
 function Hero() {
   return (
     <div className="Hero">
-      <img src={artist} alt="" className="HeroImg" />
+      <img src={banner} alt="" className="HeroImg" />
 
       <div className="content">
         <div className="breadCrump">

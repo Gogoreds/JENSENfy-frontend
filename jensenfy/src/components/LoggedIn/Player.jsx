@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import "./PlayerStyles.css";
 import {
   FaRegHeart,
   FaHeart,
@@ -84,7 +85,7 @@ function Player({ song, imgSrc, auto }) {
   };
 
   return (
-    <div className="Player">
+    <div className="player">
       <div className="songImage">
         <img src={imgSrc} alt="" />
       </div>

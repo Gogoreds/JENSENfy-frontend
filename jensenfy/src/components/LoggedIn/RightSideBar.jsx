@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCrown, FaBell, FaRegHeart, FaSun, FaCogs } from "react-icons/fa";
-import Profile from "../img/profile.jpg";
+import Profile from "../img/profile.png";
 
 function RightSideBar() {
   return (
@@ -37,4 +37,4 @@ function RightSideBar() {
   );
 }
 
-export { RightSideBar };
+export default { RightSideBar };

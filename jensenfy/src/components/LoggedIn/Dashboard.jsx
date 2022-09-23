@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FaUsers } from "react-icons/fa";
 import { AudioList } from "./AudioList";
-import { Banner } from "./Banner";
+import { Hero } from "./Hero";
 
 function Dashboard() {
   useEffect(() => {
@@ -17,7 +17,7 @@ function Dashboard() {
 
   return (
     <div className="Dashboard">
-      <Banner />
+      <Hero />
 
       <div className="menuList">
         <ul>
@@ -51,4 +51,4 @@ function Dashboard() {
   );
 }
 
-export { Dashboard };
+export default { Dashboard };

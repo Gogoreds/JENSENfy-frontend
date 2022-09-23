@@ -1,4 +1,4 @@
-const Music = [
+const Songs = [
   {
     id: 1,
     favourite: false,
@@ -90,4 +90,4 @@ const Music = [
   },
 ];
 
-export { Music };
+export { Songs };

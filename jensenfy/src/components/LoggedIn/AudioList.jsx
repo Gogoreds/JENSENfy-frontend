@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaHeadphones, FaRegClock, FaRegHeart, FaHeart } from "react-icons/fa";
 import MusicPlayer from "./Player";
-import { Songs } from "./Music";
+import { Songs } from "./Songs";
 
 function AudioList() {
   const [songs, setSongs] = useState(Songs);
@@ -21,7 +21,7 @@ function AudioList() {
 
   const changeFavourite = (id) => {
     Songs.forEach((song) => {
-      if (song.id === id) {
+      if (song.id == id) {
         song.favourite = !song.favourite;
       }
     });
