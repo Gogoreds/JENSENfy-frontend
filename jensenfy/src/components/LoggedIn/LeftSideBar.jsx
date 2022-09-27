@@ -6,6 +6,7 @@ import { Menu } from "./Menu";
 import { MenuList } from "./MenuList";
 import { MenuPlayList } from "./MenuPlayList";
 import TrackList from "./TrackList";
+
 function LeftSideBar() {
   return (
     <div className="LeftSideBar">
@@ -39,4 +40,4 @@ function LeftSideBar() {
   );
 }
 
-export default { LeftSideBar };
+export default LeftSideBar;

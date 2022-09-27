@@ -37,4 +37,4 @@ function RightSideBar() {
   );
 }
 
-export default { RightSideBar };
+export default RightSideBar;
