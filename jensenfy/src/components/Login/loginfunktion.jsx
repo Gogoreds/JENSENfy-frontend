@@ -1,4 +1,4 @@
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 import { useRef, useState, useEffect, useContext } from 'react'
 import AuthContext from './context/AuthProvider';
@@ -24,6 +24,7 @@ export default function Login() {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
+
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -102,19 +103,13 @@ export default function Login() {
 
   }
 
-
+  const Navigate = useNavigate();
 
 
   if (authMode === "signin") {
     return (
       <> {success ? (
-        <section>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <a href="#">Go to Home</a>
-          </p>
-        </section>
+        Navigate('/Mypage')
       ) : (
         <div className="Auth-form-container">
           <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
