@@ -1,55 +1,54 @@
 //import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from 'react'
-import axios from 'axios';
+import React from 'react';
+import { useRef, useState, useEffect, useContext } from 'react'
+import AuthContext from './context/AuthProvider';
+
+import axios from './api/axios';
+const LOGIN_URL = '/login';
+const REG_URL = '/newUser'
 
 
 
-export default function Login(props) {
+
+
+export default function Login() {
+
   let [authMode, setAuthMode] = useState("signin");
-
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };
-  // const navigate = useNavigate();
-
-  // const navigateToLogin = () => {
-  //   navigate("/UserLoggedIn");
-  // };
 
 
-  // const [APIData, setAPIData] = useState([]);
+
+
+  const { setAuth } = useContext(AuthContext);
+  const userRef = useRef();
+  const errRef = useRef();
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
+
   const [register, setRegister] = useState(false);
-  const [login, setLogin] = useState(false);
-
-
-
 
   useEffect(() => {
+    userRef.current.focus();
+  }, [])
 
-    // axios.get(`http://localhost:8080/api/users`)
-    //   .then((response) => {
-    //     setAPIData(response.data);
-    //   })
-
-
-
-  }, []);
+  useEffect(() => {
+    setErrMsg('');
+  }, [userName, password])
 
 
-
-
-
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
 
     // set configurations
     const RegConfiguration = {
       method: "post",
-      url: 'http://localhost:8080/api/users/newUser',
+      url: REG_URL,
       data: {
         userName,
         password,
@@ -69,91 +68,114 @@ export default function Login(props) {
 
 
   ///HANDLE Login part.
-  const handleLogin = (e) => {
-    // prevent the form from refreshing the whole page
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // make a popup alert showing the "submitted" text
-    alert("Loggin in");
-    const LoginConfigurations = {
-      method: "post",
-      url: 'http://localhost:8080/api/users/login',
-      data: {
-        userName,
-        password,
-      },
-    };
 
-    axios(LoginConfigurations)
-      .then((result) => {
-        setLogin(true);
-      })
-      .catch((error) => {
-        error = new Error();
-      });
-  };
+    try {
+      const response = await axios.post(LOGIN_URL,
+        JSON.stringify({ userName, password }),
+        {
+          headers: { 'Content-type': 'application/json' },
+          withCredentials: false,
+
+        }
+      );
+      //const token = response?.data?.token;
+      //setAuth({ userName, password, token })
+      //console.log(JSON.stringify(respone));
+      setUserName('');
+      setPassword('');
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg('No Server Response');
+      } else if (err.response?.status === 400) {
+        setErrMsg('Missing Username or Password');
+      } else if (err.response?.status === 401) {
+        setErrMsg('Unauthorized');
+      }
+      else {
+        setErrMsg('Login Failed');
+      }
+      errRef.current.focus();
+    }
+
+  }
+
 
 
 
   if (authMode === "signin") {
     return (
-      <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
-            <div className="text-center">
-              Not registered yet?{" "}
-              <span className="link-primary" onClick={changeAuthMode} >
-                Sign Up
-              </span>
-            </div>
-            <div className="form-group mt-3">
-              <label>Username </label>
-              <input
-                className="form-control mt-1"
+      <> {success ? (
+        <section>
+          <h1>You are logged in!</h1>
+          <br />
+          <p>
+            <a href="#">Go to Home</a>
+          </p>
+        </section>
+      ) : (
+        <div className="Auth-form-container">
+          <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
+            <div className="Auth-form-content">
 
-                name="username"
-                value={userName}
-                placeholder="username"
-                onChange={(e) => setUserName(e.target.value)}
-              />
-            </div>
+              <h3 className="Auth-form-title">Sign In</h3>
+              <div className="text-center">
+                Not registered yet?{" "}
+                <span className="link-primary" onClick={changeAuthMode} >
+                  Sign Up
+                </span>
+              </div>
+              <div className="form-group mt-3">
+                <label>Username </label>
+                <input
+                  className="form-control mt-1"
+                  id='userName'
+                  ref={userRef}
+                  name="userName"
+                  value={userName}
+                  placeholder="username"
+                  onChange={(e) => setUserName(e.target.value)}
+                />
+              </div>
 
-            <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                className="form-control mt-1"
+              <div className="form-group mt-3">
+                <label>Password</label>
+                <input
+                  className="form-control mt-1"
 
-                name="password"
-                type="password"
-                value={password}
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="d-grid gap-2 mt-3">
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={(e) => handleLogin(e)}
-              >
-                Logga in
-              </button>
-              {login ? (
-                <p className="text-success">You Are Logged in Successfully</p>
-              ) : (
-                <p className="text-danger">You Are Not Logged in</p>
-              )}
+                  name="password"
+                  type="password"
+                  id='password'
+                  value={password}
+                  placeholder="password"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="d-grid gap-2 mt-3">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={(e) => handleLogin(e)}
+                >
+                  Logga in
+                </button>
+                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
 
+
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
-    );
+          </form>
+        </div>
+      )}</>
+    )
   }
   // "Register page"
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form" onSubmit={(e) => handleSubmit(e)}>
+      <form className="Auth-form" onSubmit={(e) => handleRegister(e)}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center">
@@ -188,7 +210,7 @@ export default function Login(props) {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+            <button type="submit" className="btn btn-primary" onClick={handleRegister}>
               Registera
             </button>
 
