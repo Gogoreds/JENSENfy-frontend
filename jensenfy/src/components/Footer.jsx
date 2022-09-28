@@ -22,7 +22,7 @@ return (
                     <h4> Jensenfy group 4 </h4>
         <ul className = "list-unstyled">
         <li>Contact</li>
-        <li>Olle</li>
+        <li>NARXI</li>
         <li>Buenos Aires, Argentina </li>
         <li>Music site in the world</li>  
         </ul> 
@@ -52,7 +52,7 @@ return (
                     <h4>  Jensenfy group 4 </h4>
         <ul className = "list-unstyled">
         <li>Contact</li>
-        <li>Per</li>
+        <li>Ozzy</li>
         <li>Bogotá, Colombia</li>
         <li>Music site in the world</li>  
         </ul> 
