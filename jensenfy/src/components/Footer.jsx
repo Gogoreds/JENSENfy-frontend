@@ -61,7 +61,7 @@ return (
             {/* Footer Bottom */}
             <div className ="footer-bottom">
             <p className="text-xs-center">
-                &copy;{new Date().getFullYear()}-Music City Guide App - All Rights
+                &copy;{new Date().getFullYear()}- Jensenfy Music App - All Rights
                 Reserved
 
             </p>
