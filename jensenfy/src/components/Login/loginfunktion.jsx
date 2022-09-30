@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import React from 'react';
-import { useRef, useState, useEffect, useContext } from 'react'
-import AuthContext from './context/AuthProvider';
+import { useRef, useState, useEffect } from 'react'
+// import { useContext } from 'react'
+//import AuthContext from './context/AuthProvider';
 
 import axios from './api/axios';
 const LOGIN_URL = '/login';
@@ -13,15 +14,15 @@ const REG_URL = '/newUser'
 
 export default function Login() {
 
-  let [authMode, setAuthMode] = useState("signin");
+  const [authMode, setAuthMode] = useState("signin");
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
-  };
+  }
 
 
 
 
-  const { setAuth } = useContext(AuthContext);
+  //const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -73,7 +74,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(LOGIN_URL,
+      await axios.post(LOGIN_URL,
         JSON.stringify({ userName, password }),
         {
           headers: { 'Content-type': 'application/json' },
@@ -102,6 +103,7 @@ export default function Login() {
     }
 
   }
+
 
   const Navigate = useNavigate();
 
