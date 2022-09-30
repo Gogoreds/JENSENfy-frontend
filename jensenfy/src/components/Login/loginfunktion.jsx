@@ -4,7 +4,7 @@ import { useRef, useState, useEffect, useContext } from 'react'
 import AuthContext from './context/AuthProvider';
 
 import axios from './api/axios';
-const LOGIN_URL = '/restlogin';
+const LOGIN_URL = '/login';
 const REG_URL = '/newUser'
 
 
