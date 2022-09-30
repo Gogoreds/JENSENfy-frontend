@@ -21,7 +21,7 @@ function App() {
         <Route path='/About' element={<About />} />
         <Route path='/LoginPage' element={<LoginPage />} />
         <Route path='/SpotifyLogin' element={<SpotifyLogin />} />
-        <Route path='/Mypage' element={<Loggedinprofile />} />
+        <Route path='/mypage' element={<Loggedinprofile />} />
         <Route path='*' element={<Errorpage />} />
       </Routes>
     </Router >
