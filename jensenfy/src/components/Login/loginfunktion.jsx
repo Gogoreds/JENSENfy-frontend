@@ -14,6 +14,8 @@ const REG_URL = '/newUser'
 
 export default function Login() {
 
+
+
   const [authMode, setAuthMode] = useState("signin");
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
@@ -114,7 +116,7 @@ export default function Login() {
         Navigate('/authlog')
       ) : (
         <div className="Auth-form-container">
-          <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
+          <form className="Auth-form" >
             <div className="Auth-form-content">
 
               <h3 className="Auth-form-title">Sign In</h3>
