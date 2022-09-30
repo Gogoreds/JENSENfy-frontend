@@ -10,6 +10,9 @@ import Startpage from './components/Startpage';
 import Errorpage from './components/Login/Errorpage'
 import About from './components/About';
 import Loggedinprofile from './components/LoggedIn/Loggedinprofile';
+import Authlogin from "./components/Spotify/Authlogin";
+import Authlog from "./components/Spotify/Authlog";
+import SpotifyDashboard from "./components/Spotify/SpotifyDashboard";
 
 // const code = new URLSearchParams(window.location.search).get("code")
 
@@ -22,6 +25,10 @@ function App() {
         <Route path='/LoginPage' element={<LoginPage />} />
         <Route path='/SpotifyLogin' element={<SpotifyLogin />} />
         <Route path='/mypage' element={<Loggedinprofile />} />
+        <Route path='/authlogin' element={<Authlogin />} />
+        <Route path='/authlog' element={<Authlog />} />
+        <Route path='/spotifydashboard' element={<SpotifyDashboard />} />
+
         <Route path='*' element={<Errorpage />} />
       </Routes>
     </Router >

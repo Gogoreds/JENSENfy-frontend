@@ -109,7 +109,7 @@ export default function Login() {
   if (authMode === "signin") {
     return (
       <> {success ? (
-        Navigate('/Mypage')
+        Navigate('/authlog')
       ) : (
         <div className="Auth-form-container">
           <form className="Auth-form" onSubmit={(e) => handleLogin(e)}>
