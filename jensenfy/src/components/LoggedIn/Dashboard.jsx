@@ -3,8 +3,11 @@ import { FaUsers } from "react-icons/fa";
 import { AudioList } from "./AudioList";
 import { Hero } from "./Hero";
 
+
 function Dashboard() {
+
   useEffect(() => {
+
     const allLi = document.querySelector(".menuList").querySelectorAll("li");
 
     function changePopularActive() {

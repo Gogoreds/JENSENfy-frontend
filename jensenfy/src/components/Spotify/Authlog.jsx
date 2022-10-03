@@ -1,11 +1,12 @@
 import React from 'react'
-import SpotifyDashboard from './SpotifyDashboard'
+//import Dashboard from '../LoggedIn/Dashboard'
 import Authlogin from './Authlogin'
+import Loggedinprofile from '../LoggedIn/Loggedinprofile'
 
 const code = new URLSearchParams(window.location.search).get('code')
 
 function Authlog() {
-  return code ? <SpotifyDashboard code={code} /> : <Authlogin />
+  return code ? <Loggedinprofile code={code} /> : <Authlogin />
 }
 
 export default Authlog
