@@ -69,7 +69,7 @@ export default function Login() {
       });
   };
 
-
+  const Navigate = useNavigate();
 
   ///HANDLE Login part.
   const handleLogin = async (e) => {
@@ -89,7 +89,7 @@ export default function Login() {
       //console.log(JSON.stringify(respone));
       setUserName('');
       setPassword('');
-      setSuccess(true);
+      Navigate("/authlog", { replace: true });
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');
@@ -107,16 +107,16 @@ export default function Login() {
   }
 
 
-  const Navigate = useNavigate();
+
 
 
   if (authMode === "signin") {
     return (
       <> {success ? (
-        Navigate('/authlog')
+        { handleLogin }
       ) : (
         <div className="Auth-form-container">
-          <form className="Auth-form" >
+          <form className="Auth-form" onSubmit={handleLogin}>
             <div className="Auth-form-content">
 
               <h3 className="Auth-form-title">Sign In</h3>

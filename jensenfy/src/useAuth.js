@@ -8,25 +8,25 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8080/login", {
+      .post("http://localhost:8080/Spotifylogin", {
         code,
       })
       .then(res => {
         setAccessToken(res.data.accessToken)
         setRefreshToken(res.data.refreshToken)
         setExpiresIn(res.data.expiresIn)
-        window.history.pushState({}, null, "/")
+        window.history.pushState({}, null, "/authlog")
       })
       .catch(() => {
-        window.location = "/"
+        window.location = "/authlog"
       })
   }, [code])
 
   useEffect(() => {
-    if (!refreshToken || !expiresIn) return
+    if (!accessToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post("http://localhost:8080/refresh", {
+        .post("http://localhost:8080/Spotifyrefresh", {
           refreshToken,
         })
         .then(res => {
@@ -34,7 +34,7 @@ export default function useAuth(code) {
           setExpiresIn(res.data.expiresIn)
         })
         .catch(() => {
-          window.location = "/"
+          window.location = "/authlog"
         })
     }, (expiresIn - 60) * 1000)
 
