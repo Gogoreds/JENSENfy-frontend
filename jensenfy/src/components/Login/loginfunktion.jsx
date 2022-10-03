@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 import { useRef, useState, useEffect } from 'react'
-// import { useContext } from 'react'
-//import AuthContext from './context/AuthProvider';
+import { useContext } from 'react'
+import AuthContext from './context/AuthProvider';
 
 import axios from './api/axios';
-const LOGIN_URL = '/login';
+const LOGIN_URL = '/auth';
 const REG_URL = '/newUser'
 
 
@@ -24,7 +24,7 @@ export default function Login() {
 
 
 
-  //const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -76,20 +76,23 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      await axios.post(LOGIN_URL,
+      const response = await axios.post(LOGIN_URL,
         JSON.stringify({ userName, password }),
         {
-          headers: { 'Content-type': 'application/json' },
-          withCredentials: false,
+          headers: {
+            'Content-type': 'application/json'
+          },
+          withCredentials: true,
 
         }
       );
-      //const token = response?.data?.token;
-      //setAuth({ userName, password, token })
+      const accessToken = response?.data?.accessToken;
+      setAuth({ userName, password, accessToken })
       //console.log(JSON.stringify(respone));
       setUserName('');
       setPassword('');
       Navigate("/authlog", { replace: true });
+      setSuccess(true)
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');
