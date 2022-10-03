@@ -2,6 +2,8 @@ import React from "react";
 import "./LeftSideBarStyles.css";
 import { FaSpotify, FaEllipsisH } from "react-icons/fa";
 import { BiSearchAlt } from "react-icons/bi";
+import { Menus } from "./Menus";
+import { SideBarMenu } from "./SideBarMenu";
 
 function LeftSideBar() {
   return (
@@ -21,6 +23,7 @@ function LeftSideBar() {
           <BiSearchAlt />
         </i>
       </div>
+      <Menus title={"Menu"} menuObjects={SideBarMenu} />
     </div>
   );
 }
