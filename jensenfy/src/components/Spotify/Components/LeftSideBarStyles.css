@@ -1,8 +1,9 @@
 .leftSideBar {
+  z-index: 1;
   width: 280px;
   height: 100%;
   min-height: 100vh;
-  background: rgba(34, 34, 34, 0.6);
+  background: rgba(34, 34, 34, 0.5);
   backdrop-filter: blur(10px);
   padding: 25px 20px;
   overflow: hidden;
