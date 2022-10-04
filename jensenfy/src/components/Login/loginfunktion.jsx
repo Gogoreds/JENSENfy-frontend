@@ -5,7 +5,7 @@ import { useContext } from "react";
 import AuthContext from "./context/AuthProvider";
 
 import axios from "./api/axios";
-const LOGIN_URL = "/login";
+const LOGIN_URL = "auth";
 const REG_URL = "/newUser";
 
 export default function Login() {
@@ -71,7 +71,7 @@ export default function Login() {
           headers: {
             "Content-type": "application/json",
           },
-          withCredentials: false,
+          withCredentials: true,
         }
       );
       const accessToken = response?.data?.accessToken;
