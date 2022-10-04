@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 //import Dashboard from '../LoggedIn/Dashboard'
-import Authlogin from './Authlogin'
-import Loggedinprofile from '../LoggedIn/Loggedinprofile'
+import Authlogin from "./Authlogin";
+import SpotifyDasshboard from "./SpotifyDashboard";
 
-const code = new URLSearchParams(window.location.search).get('code')
+const code = new URLSearchParams(window.location.search).get("code");
 
 function Authlog() {
-  return code ? <Loggedinprofile code={code} /> : <Authlogin />
+  return code ? <SpotifyDasshboard code={code} /> : <Authlogin />;
 }
 
-export default Authlog
+export default Authlog;
