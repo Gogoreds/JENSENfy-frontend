@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { FaUsers } from "react-icons/fa";
 import { AudioList } from "./AudioList";
+import "./DashboardStyles.css";
 import { Hero } from "./Hero";
 
-
 function Dashboard() {
-
   useEffect(() => {
-
     const allLi = document.querySelector(".menuList").querySelectorAll("li");
 
     function changePopularActive() {
@@ -25,19 +23,19 @@ function Dashboard() {
       <div className="menuList">
         <ul>
           <li>
-            <a href="#">Popular</a>
+            <a href="/">Popular</a>
           </li>
           <li>
-            <a href="#">Albums</a>
+            <a href="/">Albums</a>
           </li>
           <li>
-            <a href="#">Songs</a>
+            <a href="/">Songs</a>
           </li>
           <li>
-            <a href="#">Fans</a>
+            <a href="/">Fans</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="/">About</a>
           </li>
         </ul>
 

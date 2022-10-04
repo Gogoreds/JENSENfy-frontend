@@ -1,16 +1,16 @@
 import React from "react";
-import LeftSideBar from "./LeftSideBar";
-import RightSideBar from "./RightSideBar";
-import Dashboard from "./Dashboard";
-import NavLoggedIn from "../navbars/NavLoggedIn"
+// import LeftSideBar from "./LeftSideBar";
+// import RightSideBar from "./RightSideBar";
+// import Dashboard from "./Dashboard";
+// import NavLoggedIn from "../navbars/NavLoggedIn"
 
 function Loggedinprofile() {
   return (
     <div>
-      <NavLoggedIn />
+      {/* <NavLoggedIn />
       <LeftSideBar />
       <Dashboard />
-      <RightSideBar />
+      <RightSideBar /> */}
     </div>
   );
 }
