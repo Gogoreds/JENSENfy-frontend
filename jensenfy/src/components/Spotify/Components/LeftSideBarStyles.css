@@ -127,7 +127,7 @@
 
 .MenuContainer ul li:hover a,
 .MenuContainer ul li.active a {
-  color: #fff;
+  color: aliceblue;
   transition: 0.015s;
 }
 
@@ -167,6 +167,11 @@
   color: #848484;
   align-items: center;
   margin: 10px 0;
+}
+
+.playlistContainer .playlistScroll .playlist:hover {
+  color: aliceblue;
+  transition: 0.15s;
 }
 
 .playlistContainer .playlistScroll .playlist i {
@@ -219,4 +224,91 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  color: #848484;
+}
+
+.tracklist .bottom i {
+  font-size: 17px;
+}
+
+.tracklist .bottom i:hover {
+  color: aliceblue;
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.tracklist .bottom input {
+  position: relative;
+  height: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  appearance: none;
+}
+
+.tracklist .bottom input::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: aliceblue;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: width 125ms linear;
+}
+
+.tracklist .bottom input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 2px;
+  height: 105%;
+  border-radius: 10px;
+  background-color: aliceblue;
+  border: 2px solid aliceblue;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  transition: all 125ms linear;
+}
+
+@media screen and (max-width: 700px) {
+  .leftSideBar {
+    width: 64px;
+    min-width: 64px;
+  }
+
+  .leftSideBar .searchBar {
+    display: none;
+  }
+
+  .leftSideBar .tracklist {
+    display: none;
+  }
+
+  .leftSideBar .playlistContainer {
+    display: none;
+  }
+
+  .leftSideBar .MenuContainer ul li a span {
+    display: none;
+  }
+
+  .leftSideBar .MenuContainer ul li a i {
+    font-size: 24px;
+  }
+
+  .leftSideBar .MenuContainer ul li {
+    margin: 0px;
+    margin-bottom: 15px;
+  }
+
+  .leftSideBar .jensenfyLogo h3 {
+    display: none;
+  }
+
+  .leftSideBar .jensenfyLogo .dots {
+    display: none;
+  }
 }

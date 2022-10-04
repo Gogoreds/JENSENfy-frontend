@@ -15,7 +15,7 @@ function LeftSideBar() {
           <FaSpotify />
         </i>
         <h3>Jensenfy</h3>
-        <i>
+        <i className="dots">
           <FaEllipsisH />
         </i>
       </div>
