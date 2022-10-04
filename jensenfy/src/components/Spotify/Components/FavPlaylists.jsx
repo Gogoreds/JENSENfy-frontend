@@ -16,11 +16,11 @@ function FavPlaylists() {
       <div className="playlistScroll">
         {SideBarPlaylist &&
           SideBarPlaylist.map((list) => (
-            <div className="playlist">
-              <i>
+            <div className="playlist" key={list.id}>
+              <i className="list">
                 <BsMusicNoteList />
               </i>
-              <p>Blabla</p>
+              <p>{list.name}</p>
             </div>
           ))}
       </div>

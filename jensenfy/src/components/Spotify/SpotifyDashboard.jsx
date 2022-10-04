@@ -7,7 +7,7 @@ import { RightSideBar } from "./Components/RightSideBar";
 // import NavLoggedIn from "../navbars/NavLoggedIn";
 //import useAuth from '../../useAuth'
 
-function SpotifyDashboard({ code }) {
+function SpotifyDashboard() {
   //const accessToken = useAuth(code)
 
   return (
@@ -15,10 +15,8 @@ function SpotifyDashboard({ code }) {
       <LeftSideBar />
       <Dashboard />
       <RightSideBar />
-      <div className=""></div>
       {/* <NavLoggedIn /> */}
       SpotifyDashboard
-      {code}
       <div className="background"></div>
     </div>
   );

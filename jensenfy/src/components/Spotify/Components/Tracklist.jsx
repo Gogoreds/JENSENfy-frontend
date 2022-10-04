@@ -1,15 +1,16 @@
 import React from "react";
-import Track from "../img/track.png";
+import Track from "../../img/track.png";
+import "./LeftSideBarStyles.css";
 import { BsFillVolumeUpFill, BsMusicNoteList } from "react-icons/bs";
 import { FaDesktop } from "react-icons/fa";
 
-function TrackList({ trackName, artistName }) {
+function Tracklist({ trackName, artistName }) {
   return (
-    <div className="trackList">
+    <div className="tracklist">
       <div className="top">
         <img src={Track} />
-        <p>
-          {trackName} <span>{artistName}</span>
+        <p className="trackName">
+          {trackName} <span className="trackSpan">{artistName}</span>
         </p>
       </div>
 
@@ -32,4 +33,4 @@ function TrackList({ trackName, artistName }) {
   );
 }
 
-export default TrackList;
+export { Tracklist };

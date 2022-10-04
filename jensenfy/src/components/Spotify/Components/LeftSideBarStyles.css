@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #f1f1f1;
+  color: aliceblue;
 }
 
 .leftSideBar .jensenfyLogo i {
@@ -82,8 +82,8 @@
 }
 
 .MenuContainer ul {
-width: 100%;
-padding: 0;
+  width: 100%;
+  padding: 0;
 }
 
 .MenuContainer ul li {
@@ -128,7 +128,7 @@ padding: 0;
 .MenuContainer ul li:hover a,
 .MenuContainer ul li.active a {
   color: #fff;
-  transition: .015s;
+  transition: 0.015s;
 }
 
 .playlistContainer {
@@ -156,7 +156,7 @@ padding: 0;
 }
 
 .playlistContainer .playlistScroll {
-  height: 170px;
+  height: 350px;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
@@ -164,7 +164,7 @@ padding: 0;
 
 .playlistContainer .playlistScroll .playlist {
   display: flex;
-  color:#848484;
+  color: #848484;
   align-items: center;
   margin: 10px 0;
 }
@@ -187,3 +187,36 @@ padding: 0;
   margin-top: 2px;
 }
 
+.tracklist {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 5px;
+}
+
+.tracklist .top {
+  display: flex;
+  align-items: center;
+}
+
+.tracklist .top img {
+  width: 45px !important;
+}
+
+.tracklist .top .trackName {
+  margin-left: 10px;
+  margin-top: 15px;
+  color: aliceblue;
+  font-size: 14px;
+}
+
+.tracklist .top .trackName .trackSpan {
+  display: block;
+  font-size: 12px;
+  color: #848484;
+}
+
+.tracklist .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}

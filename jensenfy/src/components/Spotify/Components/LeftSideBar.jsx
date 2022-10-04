@@ -5,6 +5,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { Menus } from "./Menus";
 import { SideBarMenu } from "./SideBarMenu";
 import { FavPlaylists } from "./FavPlaylists";
+import { Tracklist } from "./Tracklist";
 
 function LeftSideBar() {
   return (
@@ -26,6 +27,7 @@ function LeftSideBar() {
       </div>
       <Menus title={"Menu"} menuObjects={SideBarMenu} />
       <FavPlaylists />
+      <Tracklist trackName={"Track Name"} artistName={"Artist Name"} />
     </div>
   );
 }
