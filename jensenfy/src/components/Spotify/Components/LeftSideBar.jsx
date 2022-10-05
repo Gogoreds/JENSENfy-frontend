@@ -1,11 +1,8 @@
 import React from "react";
 import "./LeftSideBarStyles.css";
 import { FaSpotify, FaEllipsisH } from "react-icons/fa";
-import { BiSearchAlt } from "react-icons/bi";
 import { Menus } from "./Menus";
 import { SideBarMenu } from "./SideBarMenu";
-import { FavPlaylists } from "./FavPlaylists";
-import { Tracklist } from "./Tracklist";
 
 function LeftSideBar() {
   return (
@@ -19,15 +16,16 @@ function LeftSideBar() {
           <FaEllipsisH />
         </i>
       </div>
-      <div className="searchBar">
-        <input type="text" placeholder="What are we listening to?" />
-        <i className="magnifyingglass">
-          <BiSearchAlt />
-        </i>
+      <div className="profilePicture">
+        <img
+          src="https://t2.ea.ltmcdn.com/en/razas/4/5/5/smooth-collie_554_0_600.jpg"
+          alt=""
+          width={150}
+          height={150}
+        />
       </div>
-      <Menus title={"Menu"} menuObjects={SideBarMenu} />
-      <FavPlaylists />
-      <Tracklist trackName={"Track Name"} artistName={"Artist Name"} />
+
+      <Menus menuObjects={SideBarMenu} />
     </div>
   );
 }

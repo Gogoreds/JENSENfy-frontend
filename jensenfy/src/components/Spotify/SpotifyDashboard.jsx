@@ -2,6 +2,7 @@ import React from "react";
 import "./SpotifyDashboardStyles.css";
 import { LeftSideBar } from "./Components/LeftSideBar";
 import { Dashboard } from "./Components/Dashboard";
+// import Hero from "./Hero";
 
 // import NavLoggedIn from "../navbars/NavLoggedIn";
 //import useAuth from '../../useAuth'
