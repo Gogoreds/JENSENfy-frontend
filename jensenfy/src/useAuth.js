@@ -17,9 +17,9 @@ export default function useAuth(code) {
         setExpiresIn(res.data.expiresIn)
         window.history.pushState({}, null, "/authlog")
       })
-      .catch(() => {
-        window.location = "/authlog"
-      })
+    // .catch(() => {
+    //   window.location = "/authlog"
+    // })
   }, [code])
 
   useEffect(() => {
