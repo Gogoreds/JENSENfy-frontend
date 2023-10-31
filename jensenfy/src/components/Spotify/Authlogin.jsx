@@ -1,32 +1,34 @@
-import React from 'react'
-import NavLoggedIn from '../navbars/NavLoggedIn'
+import React from 'react';
+import CookieConsent from 'react-cookie-consent';
+import NavLoggedIn from '../navbars/NavLoggedIn';
+import { Container } from 'react-bootstrap';
 
-import { Container } from "react-bootstrap"
-
-const AUTH_URL =
-  "https://accounts.spotify.com/authorize?client_id=e0f5f7e3f9f74e39bb43ca5b2ccdb4e4&response_type=code&redirect_uri=http://localhost:3000/authlog&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
-
+const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=e0f5f7e3f9f74e39bb43ca5b2ccdb4e4&response_type=code&redirect_uri=http://localhost:3000/authlog&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
 function Authlogin() {
   return (
     <div>
       <NavLoggedIn />
-      authlogin
-
       <br />
       <Container
         className="d-flex justify-content-center align-items-center"
         style={{ minHeight: "100vh" }}
       >
-        <a className="btn btn-success btn-lg" href={AUTH_URL}>
-          Login With Spotify
-        </a>
+        <p style={{ fontSize: "48px" }}>You're logged in!</p>
+        {/* Your content here */}
       </Container>
 
-
-
+      <CookieConsent
+        location="bottom"
+        buttonText="I understand"
+        cookieName="cookieConsent"
+        style={{ background: "#333" }}
+        buttonStyle={{ background: "#5bc0de" }}
+      >
+        This website uses cookies to ensure you get the best experience.
+      </CookieConsent>
     </div>
-  )
+  );
 }
 
-export default Authlogin
+export default Authlogin;
